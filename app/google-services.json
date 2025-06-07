@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "853427870974",
+    "project_id": "controlegastosapp",
+    "storage_bucket": "controlegastosapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:853427870974:android:c53bc72df1b584173d59af",
+        "android_client_info": {
+          "package_name": "com.example.controlegastosapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaZY9Nv5wDNu4Dwe78LpSZG-3Be2yjIrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
