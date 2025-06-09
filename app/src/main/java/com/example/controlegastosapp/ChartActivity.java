@@ -2,16 +2,13 @@ package com.example.controlegastosapp;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.utils.ColorTemplate;
-
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,11 +23,9 @@ public class ChartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
 
-        // Inicializa componentes
         pieChart = findViewById(R.id.pieChart);
         db = FirebaseFirestore.getInstance();
 
-        // Carrega os dados e monta o gráfico
         carregarGrafico();
     }
 
@@ -48,7 +43,6 @@ public class ChartActivity extends AppCompatActivity {
                 }
             }
 
-            // Prepara entradas para o gráfico
             List<PieEntry> entries = new ArrayList<>();
             for (Map.Entry<String, Float> entry : totaisPorCategoria.entrySet()) {
                 entries.add(new PieEntry(entry.getValue(), entry.getKey()));
@@ -66,13 +60,12 @@ public class ChartActivity extends AppCompatActivity {
             PieData pieData = new PieData(dataSet);
             pieChart.setData(pieData);
 
-            // Configurações do gráfico
             pieChart.setUsePercentValues(true);
             pieChart.setDrawHoleEnabled(false);
             pieChart.getDescription().setEnabled(false);
             pieChart.getLegend().setEnabled(true); // Ativa legenda
 
-            pieChart.invalidate(); // Atualiza o gráfico
+            pieChart.invalidate();
         }).addOnFailureListener(e -> {
             pieChart.setNoDataText("Erro ao carregar dados: " + e.getMessage());
         });
